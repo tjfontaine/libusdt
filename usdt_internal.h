@@ -11,9 +11,7 @@
 #endif
 #endif
 
-#ifdef __linux__
-#include "mydtrace.h"
-#else
+#ifndef __linux__
 #include <sys/dtrace.h>
 #endif
 
@@ -29,6 +27,10 @@
 #include <assert.h>
 
 #define FUNC_SIZE 32
+
+#ifdef __linux__
+#include "mydtrace.h"
+#endif
 
 #include "usdt.h"
 
