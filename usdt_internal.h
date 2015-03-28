@@ -11,7 +11,12 @@
 #endif
 #endif
 
+#ifdef __linux__
+#include "mydtrace.h"
+#else
 #include <sys/dtrace.h>
+#endif
+
 #include <sys/types.h>
 #include <sys/mman.h>
 
